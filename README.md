@@ -1,8 +1,7 @@
 # Investment Calculators
 
 This is a collection of four online calculators built for the purpose of
-financial literacy education. Demos of all four are available
-[here](https://oneill.sh/apps).
+financial literacy education.
 
 ## [Dream Car Calculator](https://oneill.sh/apps/investcalc/dreamcar/)
 
