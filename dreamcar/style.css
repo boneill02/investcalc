@@ -15,6 +15,10 @@ button {
 
 }
 
+#car {
+	width: 40%;
+}
+
 .dropdown-menu {
 	max-height: 150px;
 	overflow-y: auto;
