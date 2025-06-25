@@ -1,10 +1,3 @@
-/*!
- * @author Ben O'Neill <ben@benoneill.xyz>
- * @license
- * Copyright (c) 2021 Ben O'Neill <ben@benoneill.xyz>
- * Licensed under the GNU AGPL v3.
- */
-
 var user_begin = 0;
 var user_end = 0;
 var user_return = 0;
@@ -13,16 +6,12 @@ var nasdaq_begin = 0;
 var nasdaq_end = 0;
 var nasdaq_return = 0;
 
-var result_less = 'Your return is less than the index. Lengthen your investment time period to see if you can overcome the low/negative returns.';
-var result_more = 'Nice! You beat the Nasdaq!';
-var result_negative = 'Your return is negative! This is the downside of risk. Change your dates or lengthen your investment period to see what happens.';
+const result_less = 'Your return is less than the index. Lengthen your investment time period to see if you can overcome the low/negative returns.';
+const result_more = 'Nice! You beat the Nasdaq!';
+const result_negative = 'Your return is negative! This is the downside of risk. Change your dates or lengthen your investment period to see what happens.';
 
 function numfmt(num) {
-	/* round to nearest hundredth */
-	//var rounded = Math.round(num * 100) / 100
-	
 	return Intl.NumberFormat().format(parseFloat(num).toFixed(2));
-	/* add commas */
 	
 }
 
