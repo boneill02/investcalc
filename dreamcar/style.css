@@ -15,10 +15,6 @@ button {
 
 }
 
-#car {
-	width: 40%;
-}
-
 .dropdown-menu {
 	max-height: 150px;
 	overflow-y: auto;
@@ -79,5 +75,8 @@ th, td {
 @media (min-width:1200px) { 
 	table {
 		font: 1em sans-serif;
+	}
+	#car {
+		width: 40%;
 	}
 }
