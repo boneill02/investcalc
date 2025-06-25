@@ -12,16 +12,22 @@ h1 {
 }
 
 button {
+
+}
+
+.dropdown-menu {
+	max-height: 150px;
+	overflow-y: auto;
 }
 
 a {
 	text-decoration: none;
-	color: #74A38A;
+	color: #000;
 }
 
 a:visited {
 	text-decoration: none;
-	color: #74A38A;
+	color: #000;
 }
 
 li {
