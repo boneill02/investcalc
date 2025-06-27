@@ -15,15 +15,15 @@ const loanTerm = 7; // years
 
 function calculate() {
 	carName = document.getElementById("car").value.trim();
-	let creditScore = parseInt(document.getElementById("creditScore").value);
-	let price = parseInt(carPrice.value);
-	let results = {};
+	const creditScore = parseInt(document.getElementById("creditScore").value);
+	const price = parseInt(carPrice.value);
+	const results = {};
 
-	for (let key in interestRates) {
-		let interestRate = interestRates[key];
-		let monthlyPayment = PMT(interestRate / 12, loanTerm * 12, price * -1);
-		let interest = monthlyPayment * loanTerm * 12 - price;
-		let total = price + interest;
+	for (const key in interestRates) {
+		const interestRate = interestRates[key];
+		const monthlyPayment = PMT(interestRate / 12, loanTerm * 12, price * -1);
+		const interest = monthlyPayment * loanTerm * 12 - price;
+		const total = price + interest;
 
 		results[key] = {
 			rate: parseFloat(interestRate * 100).toFixed(2),
@@ -33,7 +33,7 @@ function calculate() {
 		};
 	}
 
-	let scoreRange = getCreditScoreRange(creditScore);
+	const scoreRange = getCreditScoreRange(creditScore);
 	display(scoreRange, price, results);
 }
 
@@ -45,7 +45,7 @@ function display(scoreRange, carPrice, results) {
 	document.getElementById("scoreRange").innerHTML = scoreRange;
 	document.getElementById("carName").innerHTML = carName;
 
-	for (let score in interestRates) {
+	for (const score in interestRates) {
 		document.getElementById("rate" + score).innerHTML = results[score].rate + "%";
 		document.getElementById("monthly" + score).innerHTML = formatNumber(results[score].payment);
 		document.getElementById("interest" + score).innerHTML = formatNumber(results[score].interest);
@@ -83,14 +83,14 @@ function getInputs() {
 
 /* Excel PMT function */
 function PMT(ir, np, pv, fv, type) {
-	let pmt, pvif;
+	let pmt;
 	fv || (fv = 0);
 	type || (type = 0);
 
 	if (ir === 0)
 		return -(pv + fv)/np;
 
-	pvif = Math.pow(1 + ir, np);
+	const pvif = Math.pow(1 + ir, np);
 	pmt = - ir * (pv * pvif + fv) / (pvif - 1);
 
 	if (type === 1)

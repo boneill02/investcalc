@@ -11,9 +11,6 @@ h1 {
 	text-align: center;
 }
 
-button {
-}
-
 a {
 	text-decoration: none;
 	color: #74A38A;
@@ -43,3 +40,4 @@ h4 {
 
 .modebar {
 	display: none !important;
+}
