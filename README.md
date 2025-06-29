@@ -20,7 +20,7 @@ Calculates total savings and monthly income after retirement at different
 investment return percentages based on the user's paycheck frequency,
 investment per paycheck, and years from retirement.
 
-## [Risk/Return Calculator](https://oneill.sh/apps/investcalc/riskreturn/)
+## [Risk/Reward Calculator](https://oneill.sh/apps/investcalc/riskreward/)
 
 Uses historical QQQ (NASDAQ index tracker) data to show potential earnings from
 long-term investments, even during periods of market decline.
