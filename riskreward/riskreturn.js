@@ -12,8 +12,17 @@ const result_more = "Nice! You beat the Nasdaq!";
 const result_negative =
     "Your return is negative! This is the downside of risk. Change your dates or lengthen your investment period to see what happens.";
 
+const wrapper = document.getElementById("wrapper");
+const inform = document.getElementById("inform");
+const results = document.getElementById("results");
+
 function numfmt(num) {
     return Intl.NumberFormat().format(parseFloat(num).toFixed(2));
+}
+
+function tryAgain() {
+    wrapper.removeChild(results);
+    wrapper.appendChild(inform);
 }
 
 function riskreturncalc() {
@@ -72,6 +81,9 @@ function riskreturncalc() {
     nasdaq_return = RATE(months, 0, nasdaq_begin * -1, nasdaq_end) * 12;
 
     /* display results */
+    wrapper.removeChild(inform);
+    wrapper.appendChild(results);
+
     document.getElementById("user_invested").innerHTML =
         "$" + numfmt(monthly_in * months);
     document.getElementById("user_end").innerHTML = "$" + numfmt(user_end, 2);
@@ -95,11 +107,11 @@ function riskreturncalc() {
     /* make chart */
     const old_graph = document.getElementById("graph");
     if (old_graph != null) {
-        document.body.removeChild(old_graph);
+        results.removeChild(old_graph);
     }
 
     const ctx = document.createElement("canvas");
-    document.body.appendChild(ctx);
+    results.appendChild(ctx);
     ctx.id = "graph";
     ctx.width = 400;
     ctx.height = 400;
@@ -146,3 +158,5 @@ function riskreturncalc() {
         },
     });
 }
+
+wrapper.removeChild(results);
